@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './TodoItem.css';
 import PropTypes from 'prop-types';
 
-class TodoItem extends Component {
+class TodoItem extends PureComponent {
   render() {
     const { done, doneChanged, text } = this.props;
     return (

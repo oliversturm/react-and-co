@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { TodoItem } from './TodoItem';
 
-export class TodoList extends Component {
+export class TodoList extends PureComponent {
   render() {
     return (
       <div>

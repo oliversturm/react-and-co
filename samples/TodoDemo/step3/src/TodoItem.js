@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './TodoItem.css';
 
-export class TodoItem extends Component {
+export class TodoItem extends PureComponent {
   render() {
     const { done, doneChanged, text } = this.props;
     return (

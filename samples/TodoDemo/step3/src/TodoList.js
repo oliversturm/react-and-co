@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { TodoItem } from './TodoItem';
 import Immutable from 'seamless-immutable';
 
-export class TodoList extends Component {
+export class TodoList extends PureComponent {
   constructor(props) {
     super(props);
 
