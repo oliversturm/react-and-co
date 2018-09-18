@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const enhance = compose(
   defaultProps({ onNewItem: () => undefined }),
   withHandlers({
-    onKeyPress: props => e => {
+    onKeyPress: ({ onNewItem }) => e => {
       if (e.key === 'Enter') {
-        props.onNewItem(e.target.value);
+        onNewItem(e.target.value);
         e.target.value = '';
       }
     }
