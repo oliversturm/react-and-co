@@ -5,16 +5,19 @@ import { TodoList } from './TodoList';
 import { NavBar } from './NavBar';
 
 const OtherFunc = () => <div>Placeholder for other cool functionality!</div>;
+const NotFound = () => <div>The URL couldn't be found</div>;
 
 const locationMap = {
   TODOS: () => <TodoList />,
   OTHERFUNC: () => <OtherFunc />
 };
 
+const mapLocation = location => locationMap[location] || NotFound;
+
 const App = ({ location }) => (
   <div>
     <NavBar />
-    {locationMap[location]()}
+    {mapLocation(location)()}
   </div>
 );
 
