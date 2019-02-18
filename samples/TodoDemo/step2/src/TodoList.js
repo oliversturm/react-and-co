@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { TodoItem } from './TodoItem';
+import TodoItem from './TodoItem';
 
-export class TodoList extends PureComponent {
+class TodoList extends PureComponent {
   render() {
     return (
       <div>
@@ -12,3 +12,5 @@ export class TodoList extends PureComponent {
     );
   }
 }
+
+export default TodoList;

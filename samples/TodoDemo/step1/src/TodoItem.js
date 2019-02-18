@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './TodoItem.css';
 
-export class TodoItem extends PureComponent {
+class TodoItem extends PureComponent {
   render() {
     const { done, text } = this.props;
     return (
@@ -12,3 +12,5 @@ export class TodoItem extends PureComponent {
     );
   }
 }
+
+export default TodoItem;

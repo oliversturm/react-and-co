@@ -1,22 +1,24 @@
 import React, { PureComponent } from 'react';
-import { TodoItem } from './TodoItem';
 import Immutable from 'seamless-immutable';
+import TodoItem from './TodoItem';
 
-export class TodoList extends PureComponent {
+class TodoList extends PureComponent {
   constructor(props) {
     super(props);
 
     // could load initial state from props if needed
     this.state = Immutable({
       items: [
-        { done: true, text: 'Attend Basta' },
+        { done: true, text: 'Come to Basta' },
         { done: false, text: 'Learn about React' }
       ]
     });
   }
 
   itemDoneChanged(index, newDone) {
-    this.setState({ items: this.state.items.setIn([index, 'done'], newDone) });
+    this.setState({
+      items: this.state.items.setIn([index, 'done'], newDone)
+    });
   }
 
   render() {
@@ -34,3 +36,5 @@ export class TodoList extends PureComponent {
     );
   }
 }
+
+export default TodoList;

@@ -29,4 +29,4 @@ NewItemEntry.propTypes = {
   onNewItem: PropTypes.func
 };
 
-export { NewItemEntry };
+export default NewItemEntry;
