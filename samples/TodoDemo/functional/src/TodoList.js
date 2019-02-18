@@ -5,7 +5,7 @@ import NewItemEntry from './NewItemEntry';
 
 import './TodoList.css';
 
-const TodoList = () => {
+const TodoList = React.memo(() => {
   // as before - the initial data can come from elsewhere as needed
   const [items, setItems] = useState(
     Immutable([
@@ -38,6 +38,6 @@ const TodoList = () => {
       </fieldset>
     </div>
   );
-};
+});
 
 export default TodoList;
