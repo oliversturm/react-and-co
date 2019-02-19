@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NewItemEntry = React.memo(({ onNewItem }) => {
+const NewItemEntry = ({ onNewItem }) => {
   const onKeyPress = e => {
     if (e.key === 'Enter') {
       onNewItem && onNewItem(e.target.value);
@@ -15,10 +15,10 @@ const NewItemEntry = React.memo(({ onNewItem }) => {
       <input type="text" onKeyPress={onKeyPress} />
     </label>
   );
-});
+};
 
 NewItemEntry.propTypes = {
   onNewItem: PropTypes.func
 };
 
-export default NewItemEntry;
+export default React.memo(NewItemEntry);

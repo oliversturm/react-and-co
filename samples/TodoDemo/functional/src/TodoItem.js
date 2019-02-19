@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoItem.css';
 import PropTypes from 'prop-types';
 
-const TodoItem = React.memo(({ done, doneChanged, text }) => (
+const TodoItem = ({ done, doneChanged, text }) => (
   <div>
     <input
       type="checkbox"
@@ -11,7 +11,7 @@ const TodoItem = React.memo(({ done, doneChanged, text }) => (
     />
     <span className={done ? 'done' : 'todo'}>{text}</span>
   </div>
-));
+);
 
 TodoItem.propTypes = {
   done: PropTypes.bool,
@@ -19,4 +19,4 @@ TodoItem.propTypes = {
   doneChanged: PropTypes.func
 };
 
-export default TodoItem;
+export default React.memo(TodoItem);
