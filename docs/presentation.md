@@ -41,6 +41,7 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 - The React Success Story
 - Starting with the Basics
 - Trend and Future: Functional React
+- Tooling
 
 ---
 
@@ -62,6 +63,13 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 class: impact
 
 # DEMO
+
+---
+
+## Tooling
+
+- JSX: Well supported by Babel, TypeScript and elsewhere (Markdown - check MDX!)
+- Debugging: React Developer Tools
 
 ---
 
