@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { TodoList } from './TodoList';
+import TodoList from './TodoList';
 
 const App = () => (
   <div>
@@ -8,4 +8,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default React.memo(App);

@@ -1,46 +1,43 @@
-import React from 'react';
-import { compose, withState, withHandlers } from 'recompose';
+import React, { useState } from 'react';
 import Immutable from 'seamless-immutable';
-import { TodoItem } from './TodoItem';
-import { NewItemEntry } from './NewItemEntry';
+import TodoItem from './TodoItem';
+import NewItemEntry from './NewItemEntry';
+
 import './TodoList.css';
 
-const enhance = compose(
-  withState(
-    'items',
-    'setItems',
+const TodoList = () => {
+  // as before - the initial data can come from elsewhere as needed
+  const [items, setItems] = useState(
     Immutable([
-      { done: true, text: 'Attend Basta' },
+      { done: true, text: 'Come to Basta' },
       { done: false, text: 'Learn about React' }
     ])
-  ),
-  withHandlers({
-    itemDoneChanged: ({ setItems }) => (index, newDone) =>
-      setItems(items => items.setIn([index, 'done'], newDone)),
-    newItem: ({ setItems }) => text =>
-      setItems(items => items.concat({ done: false, text }))
-  })
-);
+  );
 
-const TodoList = enhance(({ items, itemDoneChanged, newItem }) => (
-  <div className="list-frame">
-    <fieldset>
-      <legend>Todo List</legend>
-      <div>
-        {items.map((item, index) => (
-          <TodoItem
-            key={index}
-            done={item.done}
-            text={item.text}
-            doneChanged={d => itemDoneChanged(index, d)}
-          />
-        ))}
-      </div>
-      <div>
-        <NewItemEntry onNewItem={newItem} />
-      </div>
-    </fieldset>
-  </div>
-));
+  const itemDoneChanged = (index, newDone) =>
+    setItems(items.setIn([index, 'done'], newDone));
+  const newItem = text => setItems(items.concat([{ done: false, text }]));
 
-export { TodoList };
+  return (
+    <div className="list-frame">
+      <fieldset>
+        <legend>Todo List</legend>
+        <div>
+          {items.map((item, index) => (
+            <TodoItem
+              key={index}
+              done={item.done}
+              text={item.text}
+              doneChanged={d => itemDoneChanged(index, d)}
+            />
+          ))}
+        </div>
+        <div>
+          <NewItemEntry onNewItem={newItem} />
+        </div>
+      </fieldset>
+    </div>
+  );
+};
+
+export default React.memo(TodoList);

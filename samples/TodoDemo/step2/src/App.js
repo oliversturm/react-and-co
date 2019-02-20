@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import './App.css';
-import { TodoList } from './TodoList';
+import TodoList from './TodoList';
 
 class App extends PureComponent {
   render() {

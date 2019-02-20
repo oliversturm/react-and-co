@@ -38,24 +38,22 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 
 ## Agenda
 
-- A success story
-- React - Do we need the basics?
-- Functional React
-- Redux
-- Routing
-- Sagas
+- The React Success Story
+- Starting with the Basics
+- Trend and Future: Functional React
+- Tooling
 
 ---
 
-## A Success Story
+## The React Success Story
 
-.svg-light-width[
+.svg[
 ![Download stats from npmtrends.com](angular-react-vue.png)
 ]
 
 ---
 
-## License trouble?
+## License Trouble?
 
 - React licensing used to be "BSD + Patents"
 - Never mind what that means, it's now standard MIT
@@ -65,6 +63,13 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 class: impact
 
 # DEMO
+
+---
+
+## Tooling
+
+- JSX: Well supported by Babel, TypeScript and elsewhere (Markdown - check MDX!)
+- Debugging: React Developer Tools
 
 ---
 

@@ -19,4 +19,4 @@ TodoItem.propTypes = {
   doneChanged: PropTypes.func
 };
 
-export { TodoItem };
+export default React.memo(TodoItem);
